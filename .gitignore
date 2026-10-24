@@ -1,0 +1,10 @@
+.venv/
+.venv-wsl/
+data/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+wandb/
+defense_prep.md
+model.npz

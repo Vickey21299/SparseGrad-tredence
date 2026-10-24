@@ -1,0 +1,19 @@
+[project]
+name = "self-pruning-network"
+version = "0.1.0"
+description = "A from-scratch NumPy autodiff engine and a network that prunes itself while training."
+requires-python = ">=3.10"
+dependencies = ["numpy", "matplotlib", "tqdm"]
+
+[project.optional-dependencies]
+# scikit-learn is used ONLY to download/load MNIST; never for models or gradients.
+data = ["scikit-learn"]
+dev = ["pytest"]
+# Optional NVIDIA GPU backend (`--device gpu`); results are reported from the CPU/NumPy path.
+gpu = ["cupy-cuda12x[ctk]"]
+# Optional experiment tracking (`--wandb offline|online`); never needed to reproduce results.
+tracking = ["wandb"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

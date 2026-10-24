@@ -1,0 +1,32 @@
+{
+  "parameters": 266610,
+  "max_epochs": 1000,
+  "epochs_run": 19,
+  "stopped_early": true,
+  "monitor": "val_loss",
+  "best_epoch": 9,
+  "best_val_loss": 0.08378729224205017,
+  "best_val_acc": 0.9768,
+  "final_val_acc": 0.9752,
+  "test_loss": 0.07751297280192375,
+  "test_acc": 0.9785,
+  "train_seconds": 46.8,
+  "init_activation_std": {
+    "he": [
+      0.8337,
+      0.8082
+    ],
+    "xavier": [
+      0.709,
+      0.5953
+    ],
+    "0.01": [
+      0.1651,
+      0.0196
+    ],
+    "1.0": [
+      16.5071,
+      195.9881
+    ]
+  }
+}
