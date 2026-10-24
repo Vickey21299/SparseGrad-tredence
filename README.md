@@ -156,6 +156,8 @@ weight-matrix connections. Biases (410 values) are not pruned and are reported s
   loss increase from removing a weight, with the Fisher diagonal recovered from
   mini-batch gradient statistics. It was chosen by measuring how well each candidate
   ranks the true loss increase: Spearman 0.94–0.97, versus 0.82–0.93 for magnitude.
+  **Part 4 found that this advantage does not carry over to gradual pruning at high
+  sparsity, where magnitude does better.** See the Part 4 section below.
   The derivation and the full comparison are in
   [DESIGN.md](DESIGN.md#importance-criterion).
 - **Schedule:**
@@ -207,3 +209,166 @@ weight-matrix connections. Biases (410 values) are not pruned and are reported s
   under identical settings over several seeds and at higher sparsity.
 - **That regrowth helps.** It swapped 925k connections (mostly early in the ramp, decaying
   to 0 before fine-tuning). Part 4 runs it on versus off.
+
+## Part 4: evidence
+
+Reproduce with `python -m train.sweep --jobs 4` (42 runs, ~25 min on CPU), then
+`python -m train.cost`. Every number below comes from those commands and is committed
+in `results/part4/`:
+
+| File | Contents |
+|---|---|
+| `sweep_runs.csv` | One row per run: the raw numbers |
+| `pareto.csv` | Mean / std / min / max per method and sparsity |
+| `comparison.csv` / `comparison.md` | Paired per-seed differences with t-tests |
+| `pareto.png` | The Pareto plot |
+| `cost.csv` / `cost.md` / `cost.png` | The inference-cost measurements |
+| `runs/*/` | Each run's log, metrics and mask history |
+
+**Setup:**
+- Every run uses the Part 3 recipe on CPU: 20 epochs, 2-epoch warm-up, a cubic ramp to
+  epoch 12, then fine-tuning.
+- Only the swept arguments change. The two criteria are compared **without regrowth**,
+  so the criterion is the only difference between them.
+- The 0% point is a dense model trained with the same recipe. That makes it the fair
+  baseline, unlike the early-stopped Part 2 model.
+- Each configuration runs with seeds 0, 1 and 2. Every run hit its target sparsity
+  exactly, with the same fraction of exact zeros in memory.
+
+### Sparsity–accuracy Pareto curve
+
+![Pareto curve](results/part4/pareto.png)
+
+Test accuracy, mean ± std over 3 seeds:
+
+| Sparsity | Active weights | `fisher` (½F·w²) | `magnitude` (\|w\|) | `fisher` + regrowth |
+|---|---|---|---|---|
+| 0% (dense, same recipe) | 266,200 | 97.86 ± 0.27 | 97.86 ± 0.27 | — |
+| 50% | 133,100 | 97.79 ± 0.18 | 98.16 ± 0.20 | — |
+| 75% | 66,550 | 98.07 ± 0.28 | 98.09 ± 0.58 | — |
+| 90% | 26,620 | 98.22 ± 0.08 | 98.18 ± 0.10 | 98.26 ± 0.07 |
+| 95% | 13,310 | 97.94 ± 0.14 | **98.19 ± 0.06** | 97.80 ± 0.17 |
+| 98% | 5,324 | 97.58 ± 0.07 | **98.05 ± 0.07** | 97.76 ± 0.11 |
+
+**What it costs to remove 98% of the connections.** Each pruned run is paired with the
+dense run of the same seed:
+
+| | Paired difference from dense | Per-seed differences | Significant? |
+|---|---|---|---|
+| Magnitude at 98% | +0.19 points | +0.04 / +0.43 / +0.09 | No (t = 1.5) |
+| Fisher at 98% | −0.28 points | −0.51 / +0.05 / −0.39 | No (t = −1.7) |
+
+So with magnitude pruning, a 98%-sparse network (50× fewer weights) shows **no
+measurable accuracy cost** on MNIST. At 90%, both criteria are slightly *above* the
+dense model:
+
+| | Paired difference from dense | Seeds better than dense | t |
+|---|---|---|---|
+| Magnitude at 90% | +0.32 points | 3 / 3 | 3.1 |
+| Fisher at 90% | +0.36 points | 3 / 3 | 3.2 |
+
+Neither 90% result is significant at n = 3 (critical t = 4.30). They are consistent
+with pruning acting as a mild regularizer, but they do not establish it.
+
+### Is the importance criterion better than magnitude? No.
+
+These are paired comparisons over seeds 0–2. Since n = 3, df = 2 and the two-sided 95%
+critical t is 4.30 (`results/part4/comparison.md`):
+
+| Sparsity | `fisher` − `magnitude` (points) | Fisher wins / losses | t | Real or noise? |
+|---|---|---|---|---|
+| 50% | −0.37 ± 0.27 | 0 / 3 | −2.4 | Not significant |
+| 75% | −0.02 ± 0.85 | 1 / 2 | −0.0 | Noise |
+| 90% | +0.04 ± 0.02 | 3 / 0 | 3.5 | Not significant (tiny) |
+| 95% | −0.25 ± 0.19 | 0 / 3 | −2.3 | Not significant |
+| **98%** | **−0.47 ± 0.09** | **0 / 3** | **−9.5** | **Significant: magnitude is better** |
+
+**The honest answer: no.** The Fisher criterion predicts the damage from removing a
+*single* weight better than magnitude does (Part 3: Spearman 0.94–0.97 vs 0.82–0.93).
+That advantage does not survive gradual pruning with fine-tuning. Magnitude ties it at
+≤ 90% and beats it at 95–98%, with the gap growing with sparsity.
+
+**Not the cause: layer allocation.** Both criteria end up with nearly the same density
+in layers 1 and 2 (98%: 1.2 / 6.2% for fisher vs 1.2 / 6.9% for magnitude). The output
+layer differs (55% vs 37%), but that is ~180 weights out of 5,324. So the difference is
+in *which* weights are kept within a layer. These are hypotheses that have **not**
+been tested:
+
+1. **One weight at a time vs many at once.** The diagonal (OBD) estimate scores each
+   weight as if it alone were removed. Removing 98% of them at once breaks that
+   assumption, and the interactions between weights dominate.
+2. **Immediate damage vs recoverability.** With fine-tuning, what matters is how well the
+   network can recover after a weight is removed, not the immediate loss jump.
+   Magnitude keeps the weights that training itself has been growing, which acts like a
+   long-horizon importance signal. Fisher statistics come from a 50-step window.
+3. **Noise.** At high sparsity the scores of the marginal weights are close, and the
+   mini-batch Fisher estimate is noisy.
+
+Possible next ablations: a longer statistics window or an exponential moving average;
+fisher with off-diagonal (K-FAC-style) correction; and a hybrid such as `|w|·√F`.
+
+**Regrowth** (fisher + regrowth vs fisher) gives +0.03, −0.14 and +0.18 points at
+90 / 95 / 98%. The t values are all |t| ≤ 1.7, so this is not distinguishable from
+noise. It does not hurt stability, and it does not measurably help.
+
+### The falsifiable claim
+
+> **At 98% sparsity (5,324 of 266,200 weight-matrix entries kept), gradual magnitude
+> pruning retains 98.05 ± 0.07% MNIST test accuracy, versus 97.58 ± 0.07% for our
+> Fisher-saliency criterion, averaged over 3 seeds. Magnitude is better on every
+> paired seed (mean +0.47 points, t = 9.5, df = 2).**
+
+The numbers are in `results/part4/sweep_runs.csv` (rows `*_s98_seed{0,1,2}`). The claim
+would be falsified by rerunning `python -m train.sweep` with more seeds (`--seeds 0 1 2
+3 4 5 6 7 8 9`) and finding that the paired 95% confidence interval for
+fisher − magnitude at 98% includes zero or is positive.
+
+### Real cost: does the pruned model do less work?
+
+**The dense-times-zero shortcut is not a speed-up.** Training and the `dense` column
+below compute `x @ (W ⊙ M)`. The pruned weights are true zeros, but a dense matmul
+still multiplies by them, so its cost is the same at every sparsity. It is included
+only as the reference.
+
+Two forward paths were written that actually skip pruned weights (`prune/sparse.py`).
+Before timing, both are checked to give **identical predictions** to the dense model on
+all 10,000 test images:
+
+- **`csr`:** unstructured sparse. One multiply-add per surviving weight
+  (gather + segment-sum).
+- **`compact`:** structural. Pruning leaves whole units dead: input pixels with no
+  outgoing weights, and hidden units with no inputs or no outputs. These are removed,
+  and a constant-output unit is folded into the next layer's bias. What remains is
+  smaller dense matrices.
+
+Measured on CPU (NumPy, 4 BLAS threads), using the fisher seed-0 models; the unit is
+µs per sample, median of 5 repeats:
+
+| Sparsity | Surviving weights | Compacted shape | Memory KB: dense / CSR / compact | Batch 1: dense / csr / compact | Batch 1024: dense / csr / compact |
+|---|---|---|---|---|---|
+| 0% | 266,200 | 784→300→100→10 | 1041 / 2083 / 1048 | 19.3 / 1144 / 22.8 | 3.59 / 1291 / 3.92 |
+| 90% | 26,620 | 648→264→91→10 | 1041 / 211 / 772 | 19.6 / 98.5 / 23.7 | 3.67 / 99.8 / 3.31 |
+| 95% | 13,310 | 460→209→89→10 | 1041 / 107 / 456 | 20.4 / 65.3 / 17.7 | 3.44 / 70.1 / 2.15 |
+| 98% | 5,324 | 381→119→86→10 | 1041 / 45 / 224 | 18.4 / 43.2 / 14.9 | 3.50 / 48.7 / **1.28** |
+
+The full table, including batch 64, is in `results/part4/cost.md`; the plot is in
+`cost.png`.
+
+- **FLOPs and parameters:** at 98%, multiply-adds per sample drop 50× (266,200 →
+  5,324). Weight memory drops 23× in CSR (1,041 KB → 45 KB).
+- **Structural compaction is a real speed-up.** At 98%:
+  - batch 1024: **2.7×** faster per sample (3.50 → 1.28 µs; the dense timing is stable at
+    3.4–3.8 µs across runs);
+  - batch 64: **2.0–2.7×**, because the dense batch-64 timing varied from 4.0 to 6.2 µs
+    between runs.
+
+  At 95% and batch 1024 it is 1.6× faster. About half of the input pixels (the MNIST
+  border) and 60% of the first hidden layer end up with no surviving connections, so
+  they are physically removed.
+- **Our unstructured CSR path is *slower* than dense at every sparsity tested,** by 2.3×
+  at 98% and batch 1, and much more at large batches. It does 50× fewer multiply-adds,
+  but the work is gathers and segmented sums driven from Python/NumPy. BLAS runs a dense
+  matmul at close to peak arithmetic throughput, so it wins below very high sparsity
+  or without a compiled sparse kernel. We report it rather than hide it.
+- At batch 1, every path is dominated by fixed per-call overhead of ~15–20 µs, which
+  limits any gain to about 1.2×.

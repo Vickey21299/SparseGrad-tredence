@@ -1,0 +1,21 @@
+{
+  "criterion": "magnitude",
+  "regrow": 0.0,
+  "target_sparsity": 0.75,
+  "achieved_sparsity": 0.75,
+  "exact_zero_fraction": 0.75,
+  "layer_density": [
+    0.2239,
+    0.4399,
+    0.694
+  ],
+  "active_weights": 66550,
+  "prunable_weights": 266200,
+  "dense_biases": 410,
+  "revived_total": 0,
+  "test_loss": 0.07591543681919574,
+  "test_acc": 0.9845,
+  "dense_test_acc": null,
+  "accuracy_cost": null,
+  "train_seconds": 160.4
+}

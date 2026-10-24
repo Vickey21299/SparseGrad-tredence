@@ -1,0 +1,524 @@
+[
+ {
+  "step": 860,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 910,
+  "target_sparsity": 0.017239834228432727,
+  "sparsity": 0.01723891810668665,
+  "revived": 0
+ },
+ {
+  "step": 960,
+  "target_sparsity": 0.03407876036072299,
+  "sparsity": 0.034079639368895576,
+  "revived": 0
+ },
+ {
+  "step": 1010,
+  "target_sparsity": 0.050521494962707636,
+  "sparsity": 0.05052216378662655,
+  "revived": 0
+ },
+ {
+  "step": 1060,
+  "target_sparsity": 0.06657275460022383,
+  "sparsity": 0.06657400450788875,
+  "revived": 0
+ },
+ {
+  "step": 1110,
+  "target_sparsity": 0.08223725583910851,
+  "sparsity": 0.08223891810668671,
+  "revived": 0
+ },
+ {
+  "step": 1160,
+  "target_sparsity": 0.09751971524519853,
+  "sparsity": 0.09752066115702485,
+  "revived": 0
+ },
+ {
+  "step": 1210,
+  "target_sparsity": 0.112424849384331,
+  "sparsity": 0.11242299023290758,
+  "revived": 0
+ },
+ {
+  "step": 1260,
+  "target_sparsity": 0.1269573748223426,
+  "sparsity": 0.12695717505634863,
+  "revived": 0
+ },
+ {
+  "step": 1310,
+  "target_sparsity": 0.1411220081250707,
+  "sparsity": 0.14112321562734786,
+  "revived": 0
+ },
+ {
+  "step": 1360,
+  "target_sparsity": 0.1549234658583521,
+  "sparsity": 0.15492486851990983,
+  "revived": 0
+ },
+ {
+  "step": 1410,
+  "target_sparsity": 0.16836646458802368,
+  "sparsity": 0.16836589030803906,
+  "revived": 0
+ },
+ {
+  "step": 1460,
+  "target_sparsity": 0.18145572087992257,
+  "sparsity": 0.18145755071374903,
+  "revived": 0
+ },
+ {
+  "step": 1510,
+  "target_sparsity": 0.1941959512998856,
+  "sparsity": 0.19419609316303532,
+  "revived": 0
+ },
+ {
+  "step": 1560,
+  "target_sparsity": 0.20659187241374982,
+  "sparsity": 0.2065927873779113,
+  "revived": 0
+ },
+ {
+  "step": 1610,
+  "target_sparsity": 0.21864820078735203,
+  "sparsity": 0.2186476333583771,
+  "revived": 0
+ },
+ {
+  "step": 1660,
+  "target_sparsity": 0.2303696529865295,
+  "sparsity": 0.2303681442524418,
+  "revived": 0
+ },
+ {
+  "step": 1710,
+  "target_sparsity": 0.24176094557711902,
+  "sparsity": 0.24176183320811417,
+  "revived": 0
+ },
+ {
+  "step": 1760,
+  "target_sparsity": 0.2528267951249576,
+  "sparsity": 0.25282494365138997,
+  "revived": 0
+ },
+ {
+  "step": 1810,
+  "target_sparsity": 0.2635719181958821,
+  "sparsity": 0.26357250187828696,
+  "revived": 0
+ },
+ {
+  "step": 1860,
+  "target_sparsity": 0.2740010313557296,
+  "sparsity": 0.27400075131480095,
+  "revived": 0
+ },
+ {
+  "step": 1910,
+  "target_sparsity": 0.2841188511703372,
+  "sparsity": 0.2841172051089407,
+  "revived": 0
+ },
+ {
+  "step": 1960,
+  "target_sparsity": 0.29393009420554167,
+  "sparsity": 0.2939293764087153,
+  "revived": 0
+ },
+ {
+  "step": 2010,
+  "target_sparsity": 0.30343947702718,
+  "sparsity": 0.30344102178812926,
+  "revived": 0
+ },
+ {
+  "step": 2060,
+  "target_sparsity": 0.3126517162010892,
+  "sparsity": 0.31265214124718255,
+  "revived": 0
+ },
+ {
+  "step": 2110,
+  "target_sparsity": 0.3215715282931063,
+  "sparsity": 0.32157024793388433,
+  "revived": 0
+ },
+ {
+  "step": 2160,
+  "target_sparsity": 0.33020362986906815,
+  "sparsity": 0.33020285499624347,
+  "revived": 0
+ },
+ {
+  "step": 2210,
+  "target_sparsity": 0.33855273749481174,
+  "sparsity": 0.3385537190082645,
+  "revived": 0
+ },
+ {
+  "step": 2260,
+  "target_sparsity": 0.3466235677361742,
+  "sparsity": 0.34662283996994736,
+  "revived": 0
+ },
+ {
+  "step": 2310,
+  "target_sparsity": 0.35442083715899225,
+  "sparsity": 0.35442148760330583,
+  "revived": 0
+ },
+ {
+  "step": 2360,
+  "target_sparsity": 0.36194926232910307,
+  "sparsity": 0.36194966190833955,
+  "revived": 0
+ },
+ {
+  "step": 2410,
+  "target_sparsity": 0.36921355981234355,
+  "sparsity": 0.3692148760330578,
+  "revived": 0
+ },
+ {
+  "step": 2460,
+  "target_sparsity": 0.3762184461745507,
+  "sparsity": 0.3762171299774606,
+  "revived": 0
+ },
+ {
+  "step": 2510,
+  "target_sparsity": 0.3829686379815614,
+  "sparsity": 0.3829676934635612,
+  "revived": 0
+ },
+ {
+  "step": 2560,
+  "target_sparsity": 0.38946885179921265,
+  "sparsity": 0.38947032306536433,
+  "revived": 0
+ },
+ {
+  "step": 2610,
+  "target_sparsity": 0.3957238041933415,
+  "sparsity": 0.39572501878287003,
+  "revived": 0
+ },
+ {
+  "step": 2660,
+  "target_sparsity": 0.40173821172978486,
+  "sparsity": 0.4017392937640871,
+  "revived": 0
+ },
+ {
+  "step": 2710,
+  "target_sparsity": 0.4075167909743796,
+  "sparsity": 0.40751690458302026,
+  "revived": 0
+ },
+ {
+  "step": 2760,
+  "target_sparsity": 0.4130642584929629,
+  "sparsity": 0.4130653643876785,
+  "revived": 0
+ },
+ {
+  "step": 2810,
+  "target_sparsity": 0.41838533085137153,
+  "sparsity": 0.4183846731780616,
+  "revived": 0
+ },
+ {
+  "step": 2860,
+  "target_sparsity": 0.4234847246154426,
+  "sparsity": 0.4234861006761833,
+  "revived": 0
+ },
+ {
+  "step": 2910,
+  "target_sparsity": 0.4283671563510131,
+  "sparsity": 0.42836589030803907,
+  "revived": 0
+ },
+ {
+  "step": 2960,
+  "target_sparsity": 0.4330373426239199,
+  "sparsity": 0.4330390683696469,
+  "revived": 0
+ },
+ {
+  "step": 3010,
+  "target_sparsity": 0.4375,
+  "sparsity": 0.43749812171299773,
+  "revived": 0
+ },
+ {
+  "step": 3060,
+  "target_sparsity": 0.44175984504509036,
+  "sparsity": 0.4417580766341097,
+  "revived": 0
+ },
+ {
+  "step": 3110,
+  "target_sparsity": 0.445821594325028,
+  "sparsity": 0.44582268970698724,
+  "revived": 0
+ },
+ {
+  "step": 3160,
+  "target_sparsity": 0.4496899644056498,
+  "sparsity": 0.4496882043576258,
+  "revived": 0
+ },
+ {
+  "step": 3210,
+  "target_sparsity": 0.4533696718527928,
+  "sparsity": 0.4533696468820436,
+  "revived": 0
+ },
+ {
+  "step": 3260,
+  "target_sparsity": 0.456865433232294,
+  "sparsity": 0.4568670172802404,
+  "revived": 0
+ },
+ {
+  "step": 3310,
+  "target_sparsity": 0.4601819651099903,
+  "sparsity": 0.4601803155522164,
+  "revived": 0
+ },
+ {
+  "step": 3360,
+  "target_sparsity": 0.4633239840517187,
+  "sparsity": 0.46332456799398947,
+  "revived": 0
+ },
+ {
+  "step": 3410,
+  "target_sparsity": 0.4662962066233162,
+  "sparsity": 0.4662960180315552,
+  "revived": 0
+ },
+ {
+  "step": 3460,
+  "target_sparsity": 0.4691033493906197,
+  "sparsity": 0.4691021788129226,
+  "revived": 0
+ },
+ {
+  "step": 3510,
+  "target_sparsity": 0.4717501289194662,
+  "sparsity": 0.47175056348610067,
+  "revived": 0
+ },
+ {
+  "step": 3560,
+  "target_sparsity": 0.4742412617756927,
+  "sparsity": 0.4742411720510894,
+  "revived": 0
+ },
+ {
+  "step": 3610,
+  "target_sparsity": 0.47658146452513617,
+  "sparsity": 0.47658151765589785,
+  "revived": 0
+ },
+ {
+  "step": 3660,
+  "target_sparsity": 0.4787754537336335,
+  "sparsity": 0.47877535687453043,
+  "revived": 0
+ },
+ {
+  "step": 3710,
+  "target_sparsity": 0.4808279459670218,
+  "sparsity": 0.4808264462809917,
+  "revived": 0
+ },
+ {
+  "step": 3760,
+  "target_sparsity": 0.48274365779113787,
+  "sparsity": 0.4827422990232908,
+  "revived": 0
+ },
+ {
+  "step": 3810,
+  "target_sparsity": 0.48452730577181885,
+  "sparsity": 0.48452667167543195,
+  "revived": 0
+ },
+ {
+  "step": 3860,
+  "target_sparsity": 0.4861836064749016,
+  "sparsity": 0.48618332081142,
+  "revived": 0
+ },
+ {
+  "step": 3910,
+  "target_sparsity": 0.4877172764662231,
+  "sparsity": 0.4877160030052592,
+  "revived": 0
+ },
+ {
+  "step": 3960,
+  "target_sparsity": 0.48913303231162036,
+  "sparsity": 0.48913223140495865,
+  "revived": 0
+ },
+ {
+  "step": 4010,
+  "target_sparsity": 0.4904355905769303,
+  "sparsity": 0.4904357625845229,
+  "revived": 0
+ },
+ {
+  "step": 4060,
+  "target_sparsity": 0.49162966782799,
+  "sparsity": 0.49163035311795644,
+  "revived": 0
+ },
+ {
+  "step": 4110,
+  "target_sparsity": 0.4927199806306363,
+  "sparsity": 0.4927197595792637,
+  "revived": 0
+ },
+ {
+  "step": 4160,
+  "target_sparsity": 0.4937112455507062,
+  "sparsity": 0.49371149511645385,
+  "revived": 0
+ },
+ {
+  "step": 4210,
+  "target_sparsity": 0.49460817915403676,
+  "sparsity": 0.4946093163035312,
+  "revived": 0
+ },
+ {
+  "step": 4260,
+  "target_sparsity": 0.49541549800646484,
+  "sparsity": 0.4954169797145004,
+  "revived": 0
+ },
+ {
+  "step": 4310,
+  "target_sparsity": 0.49613791867382745,
+  "sparsity": 0.49613824192336586,
+  "revived": 0
+ },
+ {
+  "step": 4360,
+  "target_sparsity": 0.4967801577219616,
+  "sparsity": 0.4967806160781367,
+  "revived": 0
+ },
+ {
+  "step": 4410,
+  "target_sparsity": 0.4973469317167042,
+  "sparsity": 0.4973478587528174,
+  "revived": 0
+ },
+ {
+  "step": 4460,
+  "target_sparsity": 0.4978429572238922,
+  "sparsity": 0.4978437265214125,
+  "revived": 0
+ },
+ {
+  "step": 4510,
+  "target_sparsity": 0.4982729508093627,
+  "sparsity": 0.4982719759579264,
+  "revived": 0
+ },
+ {
+  "step": 4560,
+  "target_sparsity": 0.49864162903895254,
+  "sparsity": 0.4986401202103682,
+  "revived": 0
+ },
+ {
+  "step": 4610,
+  "target_sparsity": 0.49895370847849874,
+  "sparsity": 0.49895191585274234,
+  "revived": 0
+ },
+ {
+  "step": 4660,
+  "target_sparsity": 0.4992139056938383,
+  "sparsity": 0.4992148760330578,
+  "revived": 0
+ },
+ {
+  "step": 4710,
+  "target_sparsity": 0.4994269372508081,
+  "sparsity": 0.49942524417731027,
+  "revived": 0
+ },
+ {
+  "step": 4760,
+  "target_sparsity": 0.4995975197152452,
+  "sparsity": 0.49959804658151763,
+  "revived": 0
+ },
+ {
+  "step": 4810,
+  "target_sparsity": 0.4997303696529865,
+  "sparsity": 0.4997295266716755,
+  "revived": 0
+ },
+ {
+  "step": 4860,
+  "target_sparsity": 0.4998302036298691,
+  "sparsity": 0.49983095416979717,
+  "revived": 0
+ },
+ {
+  "step": 4910,
+  "target_sparsity": 0.4999017382117298,
+  "sparsity": 0.49990232907588283,
+  "revived": 0
+ },
+ {
+  "step": 4960,
+  "target_sparsity": 0.49994968996440564,
+  "sparsity": 0.4999511645379414,
+  "revived": 0
+ },
+ {
+  "step": 5010,
+  "target_sparsity": 0.49997877545373365,
+  "sparsity": 0.4999774605559729,
+  "revived": 0
+ },
+ {
+  "step": 5060,
+  "target_sparsity": 0.4999937112455507,
+  "sparsity": 0.49999248685199094,
+  "revived": 0
+ },
+ {
+  "step": 5110,
+  "target_sparsity": 0.49999921390569385,
+  "sparsity": 0.5,
+  "revived": 0
+ },
+ {
+  "step": 5160,
+  "target_sparsity": 0.5,
+  "sparsity": 0.5,
+  "revived": 0
+ }
+]

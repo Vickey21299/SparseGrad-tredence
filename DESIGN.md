@@ -51,7 +51,22 @@ Four conclusions:
    robust because `F` measures how strongly the model's outputs depend on `wᵢ`,
    which is the quantity that matters.
 
-**The criterion used is therefore `fisher`: `sᵢ = ½·Fᵢᵢ·wᵢ²`.** `taylor2`,
+**Then end-to-end training contradicted it (Part 4).** Across 3 seeds of the full
+gradual-pruning pipeline:
+
+- at ≤ 90% sparsity, the criteria tie;
+- at 95%, magnitude is ahead by 0.25 points, not significant;
+- at 98%, magnitude is ahead by **0.47 points, significant** (t = 9.5, magnitude better
+  on 3 of 3 seeds).
+
+Better one-at-a-time damage prediction did not mean better pruning, and the README
+discusses why that might be. A single-removal Taylor estimate ignores interactions,
+and with fine-tuning what matters is recoverability, not the immediate loss jump. The
+lesson I take: validate a criterion on the end-to-end metric, not only on its proxy.
+
+**The default stayed `fisher`: `sᵢ = ½·Fᵢᵢ·wᵢ²`.** This was the choice made before
+Part 4. Given the Part 4 result, `--criterion magnitude` is the better production
+choice for this model. `taylor2`,
 `taylor1` and `magnitude` remain available as ablations and baselines.
 
 **Why it beats magnitude.** Magnitude treats one unit of weight as equally
@@ -183,4 +198,71 @@ afterwards.
 
 ## Serving a self-pruned model at scale
 
-_Written with Part 4._
+**First, what Part 4 measured.** The sparsity only becomes speed if the served model's
+format exploits it:
+
+- **Unstructured CSR in NumPy:** slower than dense at every sparsity.
+- **Structural compaction** (dropping dead inputs and units): 2.7× faster at 98%.
+
+So the serving plan starts by turning unstructured sparsity into a hardware-friendly
+form.
+
+**1. Export: a compile step, not the training graph.** After training, the model goes
+through an offline "compile":
+
+- Apply the masks.
+- Run `compact_mlp`: drop dead inputs and units, and fold constant units into the
+  biases. The result is smaller dense matrices.
+- Choose the format per layer, **by benchmark on the target hardware, not by
+  sparsity alone**:
+  - dense BLAS if density > ~10%;
+  - a compiled CSR/BSR kernel (MKL, cuSPARSE) below that;
+  - on GPUs, N:M (2:4) structured sparsity if the pruning was constrained to it, since
+    only that pattern runs on Ampere+ sparse tensor cores.
+- Optionally quantize to int8. That gives roughly another 4× on memory and bandwidth,
+  and pruning plus quantization compose.
+
+The artifact (weights, format, input index map, a hash of the code version) goes into
+a versioned model registry, alongside the validation report: accuracy, per-class
+accuracy, latency, and an equivalence check against the training-time masked model.
+`train/cost.py` is a small version of that check: it asserts identical predictions
+before it times anything.
+
+**2. The runtime: throughput through batching, latency through limits.**
+
+- **Batching:** a request router places requests on per-model queues, and a dynamic
+  batcher accumulates up to B requests or T milliseconds. Our measurements show
+  per-sample cost falling ~5× from batch 1 to batch 64, because the fixed ~15–20 µs
+  per call is amortised. Batching is worth more than any kernel trick at this model size.
+- **Threads:** pin a fixed number of BLAS threads per worker. Part 2 showed that the
+  default of one thread per core made each small matmul ~200× slower. In a
+  multi-tenant process, oversubscription is the default failure mode. Run one worker
+  per core group, with a fixed thread count.
+- **Scale and scheduling:** at thousands of requests per second, a 1-ms batch window
+  holds dozens of requests, so the batcher stays full. Autoscaling uses queue depth and
+  p99 latency, not CPU utilisation.
+
+**3. Multi-tenancy: what pruning actually buys.** A 98%-pruned model in CSR is 45 KB
+instead of 1 MB. The win is **density, not raw speed**:
+
+- far more tenants' models fit in RAM or GPU memory per node;
+- an LRU cache of hot models avoids cold loads;
+- per-tenant quotas and isolated queues stop one noisy tenant from consuming the
+  shared batcher;
+- models that share an architecture can be co-batched; with structurally compacted
+  models whose shapes differ, batch per model.
+
+**4. Safety in rollout.**
+
+- **Canary and shadow traffic:** compare the pruned model against the dense one on live
+  traffic, using:
+  - agreement rate;
+  - per-class accuracy, where pruning can hurt rare classes while the average looks fine;
+  - calibration.
+- **Monitoring:** watch for input-distribution drift. Pruned capacity was removed for
+  the *training* distribution, so a pruned model may degrade earlier under shift.
+- **Rollback:** a registry pointer flip back to the previous model version.
+
+**What I would not do:** serve the training-time `x @ (W ⊙ M)` graph. It pays the full
+dense cost while storing the mask in addition, so it is strictly worse than the dense
+model.

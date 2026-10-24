@@ -1,0 +1,21 @@
+{
+  "criterion": "fisher",
+  "regrow": 0.0,
+  "target_sparsity": 0.75,
+  "achieved_sparsity": 0.75,
+  "exact_zero_fraction": 0.75,
+  "layer_density": [
+    0.2242,
+    0.4361,
+    0.742
+  ],
+  "active_weights": 66550,
+  "prunable_weights": 266200,
+  "dense_biases": 410,
+  "revived_total": 0,
+  "test_loss": 0.10949480384588242,
+  "test_acc": 0.978,
+  "dense_test_acc": null,
+  "accuracy_cost": null,
+  "train_seconds": 147.7
+}

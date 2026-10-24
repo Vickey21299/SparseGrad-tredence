@@ -1,0 +1,524 @@
+[
+ {
+  "step": 860,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 910,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 960,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 1010,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 1060,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 1110,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 1160,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 1210,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 1260,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 1310,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 1360,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 1410,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 1460,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 1510,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 1560,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 1610,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 1660,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 1710,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 1760,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 1810,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 1860,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 1910,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 1960,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 2010,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 2060,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 2110,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 2160,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 2210,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 2260,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 2310,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 2360,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 2410,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 2460,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 2510,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 2560,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 2610,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 2660,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 2710,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 2760,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 2810,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 2860,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 2910,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 2960,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 3010,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 3060,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 3110,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 3160,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 3210,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 3260,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 3310,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 3360,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 3410,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 3460,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 3510,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 3560,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 3610,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 3660,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 3710,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 3760,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 3810,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 3860,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 3910,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 3960,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 4010,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 4060,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 4110,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 4160,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 4210,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 4260,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 4310,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 4360,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 4410,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 4460,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 4510,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 4560,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 4610,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 4660,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 4710,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 4760,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 4810,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 4860,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 4910,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 4960,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 5010,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 5060,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 5110,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ },
+ {
+  "step": 5160,
+  "target_sparsity": 0.0,
+  "sparsity": 0.0,
+  "revived": 0
+ }
+]

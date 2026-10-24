@@ -1,0 +1,32 @@
+{
+  "sparsity": 0.95,
+  "criterion": "fisher",
+  "regrow": 0.0,
+  "min_layer_density": 0.01,
+  "epochs": 20,
+  "warmup_epochs": 2,
+  "prune_end_epoch": 12,
+  "prune_every": 50,
+  "hidden": [
+    300,
+    100
+  ],
+  "lr": 0.001,
+  "batch_size": 128,
+  "seed": 1,
+  "data_home": "data",
+  "out": "results\\part4\\runs\\fisher_s95_seed1",
+  "dense_summary": "none",
+  "wandb": "off",
+  "no_progress": true,
+  "device": "cpu",
+  "sizes": [
+    784,
+    300,
+    100,
+    10
+  ],
+  "steps_per_epoch": 430,
+  "start_step": 860,
+  "end_step": 5160
+}

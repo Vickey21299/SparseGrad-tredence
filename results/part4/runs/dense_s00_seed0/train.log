@@ -1,0 +1,24 @@
+14:16:54 device: cpu (NumPy)
+14:16:54 model [784, 300, 100, 10]: 266,200 prunable weights; prune from step 860 to 5160 every 50 steps to 0% with magnitude, regrow 0.0
+14:16:59 epoch 1 | step 430 | train_loss 0.2372 | train_acc 0.9275 | val_loss 0.1391 | val_acc 0.9572 | max_grad_norm 8.1357 | max_abs_weight 0.4722 | epoch_seconds 4.6857 | sparsity 0.0000 | revived 0
+14:17:04 epoch 2 | step 860 | train_loss 0.0927 | train_acc 0.9720 | val_loss 0.1035 | val_acc 0.9692 | max_grad_norm 1.7353 | max_abs_weight 0.4735 | epoch_seconds 4.8233 | sparsity 0.0000 | revived 0
+14:17:09 epoch 3 | step 1290 | train_loss 0.0618 | train_acc 0.9798 | val_loss 0.1028 | val_acc 0.9676 | max_grad_norm 1.8551 | max_abs_weight 0.4767 | epoch_seconds 5.1694 | sparsity 0.0000 | revived 0
+14:17:14 epoch 4 | step 1720 | train_loss 0.0447 | train_acc 0.9858 | val_loss 0.1013 | val_acc 0.9710 | max_grad_norm 1.3826 | max_abs_weight 0.4860 | epoch_seconds 4.9987 | sparsity 0.0000 | revived 0
+14:17:19 epoch 5 | step 2150 | train_loss 0.0332 | train_acc 0.9890 | val_loss 0.0951 | val_acc 0.9720 | max_grad_norm 1.6692 | max_abs_weight 0.4843 | epoch_seconds 5.1652 | sparsity 0.0000 | revived 0
+14:17:24 epoch 6 | step 2580 | train_loss 0.0266 | train_acc 0.9913 | val_loss 0.0997 | val_acc 0.9748 | max_grad_norm 1.3769 | max_abs_weight 0.4952 | epoch_seconds 4.9174 | sparsity 0.0000 | revived 0
+14:17:29 epoch 7 | step 3010 | train_loss 0.0241 | train_acc 0.9918 | val_loss 0.1087 | val_acc 0.9720 | max_grad_norm 1.3972 | max_abs_weight 0.5030 | epoch_seconds 5.1879 | sparsity 0.0000 | revived 0
+14:17:34 epoch 8 | step 3440 | train_loss 0.0231 | train_acc 0.9920 | val_loss 0.0866 | val_acc 0.9776 | max_grad_norm 1.5954 | max_abs_weight 0.5067 | epoch_seconds 4.9674 | sparsity 0.0000 | revived 0
+14:17:39 epoch 9 | step 3870 | train_loss 0.0190 | train_acc 0.9934 | val_loss 0.0838 | val_acc 0.9768 | max_grad_norm 2.0692 | max_abs_weight 0.5139 | epoch_seconds 5.2527 | sparsity 0.0000 | revived 0
+14:17:45 epoch 10 | step 4300 | train_loss 0.0179 | train_acc 0.9939 | val_loss 0.1050 | val_acc 0.9744 | max_grad_norm 1.4177 | max_abs_weight 0.5098 | epoch_seconds 5.1652 | sparsity 0.0000 | revived 0
+14:17:50 epoch 11 | step 4730 | train_loss 0.0140 | train_acc 0.9953 | val_loss 0.1034 | val_acc 0.9762 | max_grad_norm 1.4719 | max_abs_weight 0.5195 | epoch_seconds 5.4338 | sparsity 0.0000 | revived 0
+14:17:55 epoch 12 | step 5160 | train_loss 0.0184 | train_acc 0.9936 | val_loss 0.1027 | val_acc 0.9776 | max_grad_norm 1.4944 | max_abs_weight 0.5493 | epoch_seconds 5.4211 | sparsity 0.0000 | revived 0
+14:18:00 epoch 13 | step 5590 | train_loss 0.0147 | train_acc 0.9952 | val_loss 0.1269 | val_acc 0.9738 | max_grad_norm 1.8285 | max_abs_weight 0.5635 | epoch_seconds 4.6560 | sparsity 0.0000 | revived 0
+14:18:05 epoch 14 | step 6020 | train_loss 0.0159 | train_acc 0.9950 | val_loss 0.1295 | val_acc 0.9724 | max_grad_norm 1.6267 | max_abs_weight 0.5791 | epoch_seconds 4.4929 | sparsity 0.0000 | revived 0
+14:18:09 epoch 15 | step 6450 | train_loss 0.0135 | train_acc 0.9951 | val_loss 0.1188 | val_acc 0.9772 | max_grad_norm 1.4831 | max_abs_weight 0.6077 | epoch_seconds 4.8201 | sparsity 0.0000 | revived 0
+14:18:15 epoch 16 | step 6880 | train_loss 0.0113 | train_acc 0.9959 | val_loss 0.1061 | val_acc 0.9778 | max_grad_norm 1.3938 | max_abs_weight 0.6284 | epoch_seconds 5.1087 | sparsity 0.0000 | revived 0
+14:18:19 epoch 17 | step 7310 | train_loss 0.0106 | train_acc 0.9963 | val_loss 0.1135 | val_acc 0.9774 | max_grad_norm 1.3550 | max_abs_weight 0.6445 | epoch_seconds 4.9360 | sparsity 0.0000 | revived 0
+14:18:24 epoch 18 | step 7740 | train_loss 0.0111 | train_acc 0.9963 | val_loss 0.1002 | val_acc 0.9800 | max_grad_norm 1.4127 | max_abs_weight 0.6447 | epoch_seconds 4.7791 | sparsity 0.0000 | revived 0
+14:18:29 epoch 19 | step 8170 | train_loss 0.0132 | train_acc 0.9957 | val_loss 0.1323 | val_acc 0.9752 | max_grad_norm 1.6207 | max_abs_weight 0.6873 | epoch_seconds 5.0310 | sparsity 0.0000 | revived 0
+14:18:34 epoch 20 | step 8600 | train_loss 0.0139 | train_acc 0.9952 | val_loss 0.1250 | val_acc 0.9774 | max_grad_norm 1.7985 | max_abs_weight 0.6920 | epoch_seconds 4.8045 | sparsity 0.0000 | revived 0
+14:18:34 test: loss 0.1016  acc 0.9801  sparsity 0.0000  exact zeros 0.0000  per-layer density [1.0, 1.0, 1.0]
+14:18:35 summary: {"criterion": "magnitude", "regrow": 0.0, "target_sparsity": 0.0, "achieved_sparsity": 0.0, "exact_zero_fraction": 0.0, "layer_density": [1.0, 1.0, 1.0], "active_weights": 266200, "prunable_weights": 266200, "dense_biases": 410, "revived_total": 0, "test_loss": 0.10158844701945782, "test_acc": 0.9801, "dense_test_acc": null, "accuracy_cost": null, "train_seconds": 99.9}
