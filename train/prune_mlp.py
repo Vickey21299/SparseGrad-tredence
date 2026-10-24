@@ -96,7 +96,7 @@ def main(argv=None):
 
     dense_acc = None
     dense_path = Path(args.dense_summary)
-    if dense_path.exists():
+    if dense_path.is_file():
         dense_acc = json.loads(dense_path.read_text())["test_acc"]
 
     sched_steps = np.arange(0, args.epochs * steps_per_epoch + 1, steps_per_epoch // 10)

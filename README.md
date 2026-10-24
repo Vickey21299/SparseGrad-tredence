@@ -33,7 +33,8 @@ pip install -r requirements.txt
 | Part 2 training (early stopping, ~1 min on CPU) | `python -m train.train_mlp` |
 | Evaluate the saved Part 2 model on the test set | `python -m train.test_model` |
 | Part 3 self-pruning run (90% sparsity, ~2.5 min) | `python -m train.prune_mlp` |
-| Part 4 Pareto sweep | _added with Part 4_ |
+| Part 4 Pareto sweep (42 runs; ~25 min with 4 parallel CPU jobs) | `python -m train.sweep --jobs 4` |
+| Part 4 inference-cost measurement (after the sweep) | `python -m train.cost` |
 
 ## Optional: run on an NVIDIA GPU
 
